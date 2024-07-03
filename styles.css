@@ -302,9 +302,89 @@ body {
 .view-button:hover {
     background-color: #45a049; /* Темно-зеленый цвет при наведении */
 }
-/* CSS для изображений товаров */
-.product-image img {
+/* Добавляем стили для закругления углов у изображений товаров */
+/* Обновленные стили для изображений товаров */
+.product-image {
     width: 100%;
     height: auto;
-    border-radius: 10%; /* Это закруглит углы на 20% */
+    border-radius: 15px; /* Закругляем углы на 10px */
+    overflow: hidden; /* Обрезаем изображение, которое выходит за пределы контейнера */
 }
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Обеспечиваем, чтобы изображение заполняло контейнер без искажений */
+    transition: transform 0.2s ease; /* Плавное изменение при увеличении */
+}
+
+.product-image img:hover {
+    transform: scale(1.05); /* Немного увеличиваем изображение при наведении */
+}
+
+/* Стили для модальных окон и их содержимого */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    border-radius: 10px; /* Закругляем углы модального окна */
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Закругляем углы у изображений в модальном окне */
+    object-fit: contain; /* Отображаем изображение, сохраняя его пропорции */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Стили для кнопки "Главная" */
+.home-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.home-button:hover {
+    background-color: darkgreen;
+}
+
+/* Другие стили остаются без изменений */
+
