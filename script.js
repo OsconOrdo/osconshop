@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
             price: '900 сом',
             condition: 'Новый',
             images: ['image/venom.jpg', 'image/photo_2_2024-07-03_16-58-24.jpg', 'image/photo_5_2024-07-03_16-58-24.jpg'],
-            url: 'https://osconordo.github.io/osconshop'
+            url: 'https://osconordo.github.io/osconshop/image/venom.jpg'
         },
         {
             title: 'Скакалка',
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
             price: '450 сом',
             condition: 'Новый',
             images: ['image/scacalka.jpg'],
-            url: 'https://osconordo.github.io/osconshop'
+            url: 'https://osconordo.github.io/osconshop/image/scacalka.jpg'
         },
         {
             title: 'Game stick late 4k',
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             price: '1800 сом',
             condition: 'Новый',
             images: ['image/photo_4_2024-07-03_16-58-24.jpg'],
-            url: 'https://osconordo.github.io/osconshop'
+            url: 'https://osconordo.github.io/osconshop/image/photo_4_2024-07-03_16-58-24.jpg'
         },
         {
             title: 'Футболка',
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             price: '600 сом',
             
             images: ['image/photo_2024-07-03_16-58-36.jpg'],
-            url: 'https://osconordo.github.io/osconshop'
+            url: 'https://osconordo.github.io/osconshop/image/photo_2024-07-03_16-58-36.jpg'
         },
         // Добавьте больше товаров в этом массиве
     ];
