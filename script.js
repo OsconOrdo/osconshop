@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         var message = `Я хотел бы купить этот товар: ${product.title} (${product.url})\nURL изображения: ${product.images[0]}`;
-        var whatsappNumber = '9960508011209';
+        var whatsappNumber = '9960778826267';
         var telegramUsername = 'HackerDarkWhile';
 
         document.getElementById('whatsapp-button').onclick = function() {
