@@ -3,30 +3,34 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             title: 'Перчатки боксёрские',
             description: 'Venom перчатка чёрный.',
+            condition: 'Хороший',
             price: '900 сом',
             images: ['image/venom.jpg', 'image/photo_2_2024-07-03_16-58-24.jpg', 'image/photo_5_2024-07-03_16-58-24.jpg'],
-            url: ''
+            url: 'https://osconordo.github.io/osconshop'
         },
         {
             title: 'Скакалка',
             description: 'С утяжелителем, мягкая ручка .',
             price: '450 сом',
+            condition: 'Хороший',
             images: ['image/scacalka.jpg'],
-            url: 'https://example.com/product2'
+            url: 'https://osconordo.github.io/osconshop'
         },
         {
             title: 'Game stick late 4k',
             description: '2200 игр.',
             price: '1800 сом',
+            condition: 'Хороший',
             images: ['image/photo_4_2024-07-03_16-58-24.jpg'],
-            url: 'Что то'
+            url: 'https://osconordo.github.io/osconshop'
         },
         {
             title: 'Футболка',
             description: 'Белый',
-            price: '450 сом',
+            price: '600 сом',
+            condition: 'Хороший',
             images: ['image/photo_2024-07-03_16-58-36.jpg'],
-            url: 'Что то'
+            url: 'https://osconordo.github.io/osconshop'
         },
         // Добавьте больше товаров в этом массиве
     ];
@@ -46,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h2 class="product-title">${product.title}</h2>
                     <p class="product-description">${product.description}</p>
                     <p class="product-price">${product.price}</p>
+                    <p class="product-condition">Состояние: ${product.condition}</p>
                     <button class="view-button" data-title="${product.title}">Посмотреть</button>
                 </div>
             `;
@@ -80,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('modal-title').innerText = product.title;
         document.getElementById('modal-description').innerText = product.description;
         document.getElementById('modal-price').innerText = product.price;
+        document.getElementById('modal-condition').innerText = `Состояние: ${product.condition}`;
 
         var imagesContainer = document.querySelector('.modal-images');
         imagesContainer.innerHTML = '';
@@ -93,14 +99,17 @@ document.addEventListener('DOMContentLoaded', function() {
             imagesContainer.appendChild(img);
         });
 
-        var message = `Я хотел бы купить этот товар: ${product.title} (${product.url})`;
+        var message = `Я хотел бы купить этот товар: ${product.title} (${product.url})\nURL изображения: ${product.images[0]}`;
+        var whatsappNumber = '9960508011209';
+        var telegramUsername = '@HackerDarkWhile';
+
         document.getElementById('whatsapp-button').onclick = function() {
-            var whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            var whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         };
 
         document.getElementById('telegram-button').onclick = function() {
-            var telegramUrl = `https://t.me/share/url?url=${encodeURIComponent(product.url)}&text=${encodeURIComponent(message)}`;
+            var telegramUrl = `https://t.me/${telegramUsername}?text=${encodeURIComponent(message)}`;
             window.open(telegramUrl, '_blank');
         };
 
