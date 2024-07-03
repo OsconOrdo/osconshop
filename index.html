@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OsconSHOP</title>
+    <title>Маркетплейс</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="header">
-        <div class="logo">OsconSHOP</div>
+        <div class="logo">МП</div>
         <div class="search-bar">
             <input type="text" id="search-input" placeholder="Поиск товаров..." autocomplete="off">
             <div id="suggestions" class="suggestions"></div>
@@ -39,6 +39,17 @@
                         </button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fullscreen-modal" class="modal">
+        <div class="modal-content fullscreen-content">
+            <span class="close-button fullscreen-close">&times;</span>
+            <div class="fullscreen-body">
+                <button class="nav-button" id="prev-button">&lt;</button>
+                <img id="fullscreen-image" src="" alt="Full Screen Image">
+                <button class="nav-button" id="next-button">&gt;</button>
             </div>
         </div>
     </div>
