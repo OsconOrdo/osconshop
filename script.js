@@ -2,33 +2,33 @@ document.addEventListener('DOMContentLoaded', function() {
     var products = [
         {
             title: 'Перчатки боксёрские',
-            description: 'Venom перчатка чёрный.',
-            condition: 'Хороший',
+            description: 'Venom перчатка чёрный, новый.',
             price: '900 сом',
+            condition: 'Новый',
             images: ['image/venom.jpg', 'image/photo_2_2024-07-03_16-58-24.jpg', 'image/photo_5_2024-07-03_16-58-24.jpg'],
             url: 'https://osconordo.github.io/osconshop'
         },
         {
             title: 'Скакалка',
-            description: 'С утяжелителем, мягкая ручка .',
+            description: 'С утяжелителем, мягкая ручка, новый .',
             price: '450 сом',
-            condition: 'Хороший',
+            condition: 'Новый',
             images: ['image/scacalka.jpg'],
             url: 'https://osconordo.github.io/osconshop'
         },
         {
             title: 'Game stick late 4k',
-            description: '2200 игр.',
+            description: '2200 игр, новый.',
             price: '1800 сом',
-            condition: 'Хороший',
+            condition: 'Новый',
             images: ['image/photo_4_2024-07-03_16-58-24.jpg'],
             url: 'https://osconordo.github.io/osconshop'
         },
         {
             title: 'Футболка',
-            description: 'Белый',
+            description: 'Белый, новый',
             price: '600 сом',
-            condition: 'Хороший',
+            
             images: ['image/photo_2024-07-03_16-58-36.jpg'],
             url: 'https://osconordo.github.io/osconshop'
         },
@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h2 class="product-title">${product.title}</h2>
                     <p class="product-description">${product.description}</p>
                     <p class="product-price">${product.price}</p>
-                    <p class="product-condition">Состояние: ${product.condition}</p>
                     <button class="view-button" data-title="${product.title}">Посмотреть</button>
                 </div>
             `;
@@ -85,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('modal-title').innerText = product.title;
         document.getElementById('modal-description').innerText = product.description;
         document.getElementById('modal-price').innerText = product.price;
-        document.getElementById('modal-condition').innerText = `Состояние: ${product.condition}`;
 
         var imagesContainer = document.querySelector('.modal-images');
         imagesContainer.innerHTML = '';
@@ -100,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         var message = `Я хотел бы купить этот товар: ${product.title} (${product.url})\nURL изображения: ${product.images[0]}`;
-        var whatsappNumber = '9960778826267';
+        var whatsappNumber = '9960508011209';
         var telegramUsername = 'HackerDarkWhile';
 
         document.getElementById('whatsapp-button').onclick = function() {
