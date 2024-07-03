@@ -28,9 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
             images: ['image/photo_2024-07-03_16-58-36.jpg'],
             url: 'Что то'
         },
-
-
-
         // Добавьте больше товаров в этом массиве
     ];
 
@@ -65,6 +62,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+
+        var productImages = document.querySelectorAll('.product-image img');
+        productImages.forEach(function(img) {
+            img.addEventListener('click', function() {
+                var title = img.closest('.product-card').querySelector('.product-title').innerText;
+                var product = products.find(function(p) { return p.title === title; });
+                if (product) {
+                    openFullscreen(product.images, 0);
+                }
+            });
+        });
     }
 
     function openModal(product) {
@@ -75,10 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         var imagesContainer = document.querySelector('.modal-images');
         imagesContainer.innerHTML = '';
-        product.images.forEach(function(image) {
+        product.images.forEach(function(image, index) {
             var img = document.createElement('img');
             img.src = image;
             img.alt = product.title;
+            img.addEventListener('click', function() {
+                openFullscreen(product.images, index);
+            });
             imagesContainer.appendChild(img);
         });
 
@@ -96,16 +107,48 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'block';
     }
 
-    var closeButton = document.querySelector('.close-button');
-    closeButton.onclick = function() {
-        var modal = document.getElementById('product-modal');
-        modal.style.display = 'none';
-    };
+    function openFullscreen(images, index) {
+        var fullscreenModal = document.getElementById('fullscreen-modal');
+        var fullscreenImage = document.getElementById('fullscreen-image');
+        var currentIndex = index;
+
+        function updateImage() {
+            fullscreenImage.src = images[currentIndex];
+        }
+
+        document.getElementById('prev-button').onclick = function() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        };
+
+        document.getElementById('next-button').onclick = function() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        };
+
+        fullscreenImage.onclick = function() {
+            fullscreenImage.classList.toggle('zoomed');
+        };
+
+        updateImage();
+        fullscreenModal.style.display = 'block';
+    }
+
+    var closeButton = document.querySelectorAll('.close-button');
+    closeButton.forEach(function(button) {
+        button.onclick = function() {
+            var modal = button.closest('.modal');
+            modal.style.display = 'none';
+        };
+    });
 
     window.onclick = function(event) {
         var modal = document.getElementById('product-modal');
+        var fullscreenModal = document.getElementById('fullscreen-modal');
         if (event.target == modal) {
             modal.style.display = 'none';
+        } else if (event.target == fullscreenModal) {
+            fullscreenModal.style.display = 'none';
         }
     };
 
