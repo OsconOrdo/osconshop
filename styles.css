@@ -190,19 +190,34 @@ body {
     padding: 0;
 }
 
+/* CSS для кнопки закрытия модального окна с фотографией */
 .close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 80px; /* Ширина кнопки */
+    height: 80px; /* Высота кнопки */
+    font-size: 48px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 50%; /* Закругление до полного круга */
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-.close-button:hover,
+.close-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
 .close-button:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
+
+
 
 .modal-body {
     display: flex;
