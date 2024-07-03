@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OsconSHOP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">OsconSHOP</div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Поиск товаров..." autocomplete="off">
+            <div id="suggestions" class="suggestions"></div>
+            <button id="search-button">Поиск</button>
+        </div>
+    </header>
+    <main id="product-container">
+        <!-- Товары будут динамически добавляться сюда -->
+    </main>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-body">
+                <div class="modal-images">
+                    <!-- Изображения товара будут динамически добавляться сюда -->
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-description"></p>
+                    <p id="modal-price"></p>
+                    <div class="buy-buttons">
+                        <button class="buy-button" id="whatsapp-button">
+                            <img src="image/whatsapp-icon.gif" alt="WhatsApp">
+                        </button>
+                        <button class="buy-button" id="telegram-button">
+                            <img src="image/telegram-icon.gif" alt="Telegram">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
