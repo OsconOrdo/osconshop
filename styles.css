@@ -386,5 +386,38 @@ body {
     background-color: darkgreen;
 }
 
-/* Другие стили остаются без изменений */
+.modal-content .product-state {
+    font-weight: bold;
+    margin-top: 10px;
+}
 
+.product-state.good {
+    color: green;
+}
+
+.product-state.used {
+    color: black;
+}
+/* Стили для категорий */
+.category-bar {
+    display: flex;
+    justify-content: center;
+    background-color: #f1f1f1;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.category-button {
+    background-color: #0073e6;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.category-button:hover {
+    background-color: #005bb5;
+}
