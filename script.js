@@ -1,12 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
     var products = [
         {
+            title: 'Дезодоратор для холодилька',
+            description: 'Минералы запахом',
+            price: 'Договорная',
+            condition: 'Новый',
+            images: ['image/kuhnya/e742bee3-a84c-4dc1-9e69-0875ad7e09dc.png'],
+            category: 'household',
+            url: 'https://osconordo.github.io/osconshop'
+        },
+        {
             title: 'Перчатки боксёрские',
             description: 'Venom перчатка чёрный, новый.',
             price: '900 сом',
             condition: 'Новый',
             images: ['image/venom.jpg', 'image/photo_2_2024-07-03_16-58-24.jpg', 'image/photo_5_2024-07-03_16-58-24.jpg'],
+            category: 'sports',
             url: 'https://osconordo.github.io/osconshop/image/venom.jpg'
+        },
+        {
+            title: 'BerClean Натуральная жидкость для стирки',
+            description: 'С растительными экстратами',
+            price: 'Договорная',
+            condition: 'Новый',
+            images: ['image/kuhnya/2fe7e657-2f67-47f2-94d1-4bf15d4120ca.png'],
+            category: 'cleaning',
+            url: 'https://osconordo.github.io/osconshop'
         },
         {
             title: 'Скакалка',
@@ -14,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             price: '450 сом',
             condition: 'Новый',
             images: ['image/scacalka.jpg'],
+            category: 'sports',
             url: 'https://osconordo.github.io/osconshop/image/scacalka.jpg'
         },
         {
@@ -22,17 +42,53 @@ document.addEventListener('DOMContentLoaded', function() {
             price: '1800 сом',
             condition: 'Новый',
             images: ['image/photo_4_2024-07-03_16-58-24.jpg'],
+            category: 'household',
             url: 'https://osconordo.github.io/osconshop/image/photo_4_2024-07-03_16-58-24.jpg'
         },
         {
             title: 'Футболка',
             description: 'Белый, новый',
             price: '600 сом',
-            
             images: ['image/photo_2024-07-03_16-58-36.jpg'],
+            category: 'clothing',
             url: 'https://osconordo.github.io/osconshop/image/photo_2024-07-03_16-58-36.jpg'
         },
-        // Добавьте больше товаров в этом массиве
+        {
+            title: 'ILIFE Салветки для мытья посуды',
+            description: 'Из древесного волокна',
+            price: 'Договорная',
+            condition: 'Новый',
+            images: ['image/kuhnya/cc16567c-b383-4294-a117-24a43d8681ac.png'],
+            category: 'cleaning',
+            url: 'https://osconordo.github.io/osconshop'
+        },
+        {
+            title: 'Энзимное моющее средство',
+            description: 'Энзимное моющее средство',
+            price: 'Договорная',
+            condition: 'Новый',
+            images: ['image/kuhnya/c14dca3e-aa18-4b34-bd61-82174399a584.png'],
+            category: 'cleaning',
+            url: 'https://osconordo.github.io/osconshop'
+        },
+        {
+            title: 'Салфетки для уборки кухни',
+            description: 'Сильная очищающая способность, удаляет масляные пятно ',
+            price: 'Договорная',
+            condition: 'Новый',
+            images: ['image/kuhnya/bd9ed663-de7f-4b81-8e2a-d217924873a9.png'],
+            category: 'cleaning',
+            url: 'https://osconordo.github.io/osconshop'
+        },
+        {
+            title: 'Растительное микромолекулярное средство для стирки',
+            description: 'Подходит для ручной/машинной стирки, подходит для одежды',
+            price: 'Договорная',
+            condition: 'Новый',
+            images: ['image/kuhnya/6333f24c-ceb9-4c2a-8d43-031644b7d7e6.png'],
+            category: 'cleaning',
+            url: 'https://osconordo.github.io/osconshop'
+        }
     ];
 
     function loadProducts(products) {
@@ -160,6 +216,25 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     loadProducts(products);
+
+    function filterProducts(category) {
+        if (category === 'all') {
+            loadProducts(products);
+        } else {
+            var filteredProducts = products.filter(function(product) {
+                return product.category === category;
+            });
+            loadProducts(filteredProducts);
+        }
+    }
+
+    var categoryButtons = document.querySelectorAll('.category-button');
+    categoryButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var category = this.getAttribute('data-category');
+            filterProducts(category);
+        });
+    });
 
     function showSuggestions(query) {
         var suggestions = document.getElementById('suggestions');
