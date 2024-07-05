@@ -408,7 +408,7 @@ body {
 }
 
 .category-button {
-    background-color: #0073e6;
+    background-color: #0073e6ec;
     border: none;
     padding: 10px 20px;
     margin: 0 5px;
@@ -421,3 +421,248 @@ body {
 .category-button:hover {
     background-color: #005bb5;
 }
+/* Основной стиль для категории */
+#category-select {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    width: 100%;
+    max-width: 300px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Стиль для стрелки выпадающего списка */
+#category-select::after {
+    content: '\25BC'; /* Стрелка вниз */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Стиль для контейнера категории */
+.category-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Стиль для обёртки выпадающего списка */
+.category-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+
+.category-wrapper::before {
+    content: '\25BC'; /* Стрелка вниз */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #333;
+}
+
+/* Дополнительные стили для улучшения внешнего вида */
+#category-select {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+#category-select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Стили для категорий */
+#category-select option {
+    padding: 10px;
+}
+
+/* Убедитесь, что категория выбор выглядит красиво на мобильных устройствах */
+@media (max-width: 768px) {
+    #category-select {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    #category-select {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
+
+/* Стиль для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 4px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Полный экран изображений */
+#fullscreen-modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#fullscreen-image {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 0.3s ease;
+}
+
+#fullscreen-image.zoomed {
+    transform: scale(1.5);
+}
+
+#prev-button,
+#next-button {
+    position: absolute;
+    top: 50%;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+#prev-button {
+    left: 10px;
+}
+
+#next-button {
+    right: 10px;
+}
+
+/* Продукт карточка */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.product-info {
+    text-align: center;
+}
+
+.product-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product-description {
+    color: #555;
+}
+
+.product-price {
+    color: #00ff2a;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.view-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+    background-color: #0056b3;
+}
+
+/* Подсказки для поиска */
+.suggestions {
+    position: absolute;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
