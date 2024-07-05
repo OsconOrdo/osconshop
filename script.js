@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             condition: 'Новый',
             images: ['image/kuhnya/e742bee3-a84c-4dc1-9e69-0875ad7e09dc.png'],
             category: 'household',
-            url: 'https://osconordo.github.io/osconshop'
+            url: 'https://osconordo.github.io/osconshop/image/kuhnya/e742bee3-a84c-4dc1-9e69-0875ad7e09dc.png'
         },
         {
             title: 'Перчатки боксёрские',
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             condition: 'Новый',
             images: ['image/kuhnya/2fe7e657-2f67-47f2-94d1-4bf15d4120ca.png'],
             category: 'cleaning',
-            url: 'https://osconordo.github.io/osconshop'
+            url: 'https://osconordo.github.io/osconshop/image/kuhnya/2fe7e657-2f67-47f2-94d1-4bf15d4120ca.png'
         },
         {
             title: 'Скакалка',
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             price: '1800 сом',
             condition: 'Новый',
             images: ['image/photo_4_2024-07-03_16-58-24.jpg'],
-            category: 'household',
+            category: 'other',
             url: 'https://osconordo.github.io/osconshop/image/photo_4_2024-07-03_16-58-24.jpg'
         },
         {
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
             condition: 'Новый',
             images: ['image/kuhnya/cc16567c-b383-4294-a117-24a43d8681ac.png'],
             category: 'cleaning',
-            url: 'https://osconordo.github.io/osconshop'
+            url: 'https://osconordo.github.io/osconshop/image/kuhnya/cc16567c-b383-4294-a117-24a43d8681ac.png'
         },
         {
             title: 'Энзимное моющее средство',
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
             condition: 'Новый',
             images: ['image/kuhnya/c14dca3e-aa18-4b34-bd61-82174399a584.png'],
             category: 'cleaning',
-            url: 'https://osconordo.github.io/osconshop'
+            url: 'https://osconordo.github.io/osconshop/image/kuhnya/c14dca3e-aa18-4b34-bd61-82174399a584.png'
         },
         {
             title: 'Салфетки для уборки кухни',
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             condition: 'Новый',
             images: ['image/kuhnya/bd9ed663-de7f-4b81-8e2a-d217924873a9.png'],
             category: 'cleaning',
-            url: 'https://osconordo.github.io/osconshop'
+            url: 'https://osconordo.github.io/osconshop/image/kuhnya/bd9ed663-de7f-4b81-8e2a-d217924873a9.png'
         },
         {
             title: 'Растительное микромолекулярное средство для стирки',
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
             condition: 'Новый',
             images: ['image/kuhnya/6333f24c-ceb9-4c2a-8d43-031644b7d7e6.png'],
             category: 'cleaning',
-            url: 'https://osconordo.github.io/osconshop'
+            url: 'https://osconordo.github.io/osconshop/image/kuhnya/6333f24c-ceb9-4c2a-8d43-031644b7d7e6.png'
         }
     ];
 
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
             imagesContainer.appendChild(img);
         });
 
-        var message = `Я хотел бы купить этот товар: ${product.title} (${product.url})\nURL изображения: ${product.images[0]}`;
+        var message = `Я хотел бы купить этот товар: ${product.title} (${product.url})\nURL изображения: ${product.url}`;
         var whatsappNumber = '9960778826267';
         var telegramUsername = 'HackerDarkWhile';
 
@@ -228,12 +228,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    var categoryButtons = document.querySelectorAll('.category-button');
-    categoryButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            var category = this.getAttribute('data-category');
-            filterProducts(category);
-        });
+    var categorySelect = document.getElementById('category-select');
+    categorySelect.addEventListener('change', function() {
+        var selectedCategory = categorySelect.value;
+        filterProducts(selectedCategory);
     });
 
     function showSuggestions(query) {
