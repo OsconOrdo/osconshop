@@ -42,15 +42,13 @@ body {
 #search-button {
     padding: 10px 20px;
     border: none;
-    background-color: #febd69;
+    background-color: #2dceff;
     color: black;
     cursor: pointer;
     border-radius: 0 4px 4px 0;
 }
 
-#search-button:hover {
-    background-color: #f3a847;
-}
+
 
 /* Стили для подсказок */
 .suggestions {
@@ -98,91 +96,7 @@ body {
     justify-content: space-between;
 }
 
-.product-card:hover {
-    transform: translateY(-10px);
-}
-
-.product-image {
-    width: 100%;
-    height: 60%;
-    overflow: hidden;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-}
-
-.product-info {
-    text-align: center;
-}
-
-.product-title {
-    font-size: 18px;
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-.product-description {
-    font-size: 14px;
-    color: #777;
-    margin: 10px 0;
-}
-
-.product-price {
-    font-size: 18px;
-    color: #333;
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-.buy-buttons {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-}
-
-.buy-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.buy-button img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.buy-button img:hover {
-    transform: scale(1.2);
-}
-
 /* Стили для модального окна */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-    background-color: white;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 800px;
-    border-radius: 10px;
-}
-
 .fullscreen-content {
     width: 90%;
     max-width: none;
@@ -208,14 +122,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-.close-button:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-}
-.close-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
 
 
 
@@ -228,12 +134,6 @@ body {
 .modal-images {
     flex: 1;
     margin-right: 20px;
-}
-
-.modal-images img {
-    max-width: 100%;
-    margin-bottom: 10px;
-    cursor: pointer;
 }
 
 .modal-info {
@@ -249,55 +149,7 @@ body {
     background-color: black;
 }
 
-.fullscreen-body img {
-    max-width: 90%;
-    max-height: 90%;
-}
-
-.nav-button {
-    position: absolute;
-    top: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-}
-
-#prev-button {
-    left: 10px;
-}
-
-#next-button {
-    right: 10px;
-}
-
 /* Адаптивный дизайн */
-@media (max-width: 600px) {
-    .logo {
-        font-size: 20px;
-        flex: 0 0 60px;
-    }
-
-    .search-bar {
-        margin: 0;
-    }
-}
-.view-button {
-    background-color: #4CAF50; /* Зеленый цвет фона */
-    border: none; /* Убираем границу */
-    color: white; /* Белый цвет текста */
-    padding: 15px 32px; /* Внутренние отступы */
-    text-align: center; /* Выравнивание текста по центру */
-    text-decoration: none; /* Убираем подчеркивание текста */
-    display: inline-block; /* Отображаем как строчно-блочный элемент */
-    font-size: 16px; /* Размер шрифта */
-    margin: 4px 2px; /* Внешние отступы */
-    cursor: pointer; /* Указатель мыши при наведении */
-    border-radius: 8px; /* Закругленные углы */
-    transition: background-color 0.3s ease; /* Плавный переход при изменении фона */
-}
 
 .view-button:hover {
     background-color: #45a049; /* Темно-зеленый цвет при наведении */
@@ -318,10 +170,6 @@ body {
     transition: transform 0.2s ease; /* Плавное изменение при увеличении */
 }
 
-.product-image img:hover {
-    transform: scale(1.05); /* Немного увеличиваем изображение при наведении */
-}
-
 /* Стили для модальных окон и их содержимого */
 .modal {
     display: none;
@@ -335,38 +183,11 @@ body {
     background-color: rgba(0,0,0,0.7);
 }
 
-.modal-content {
-    background-color: #fefefe;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    position: relative;
-    border-radius: 10px; /* Закругляем углы модального окна */
-}
-
 .modal-content img {
     width: 100%;
     height: auto;
     border-radius: 10px; /* Закругляем углы у изображений в модальном окне */
     object-fit: contain; /* Отображаем изображение, сохраняя его пропорции */
-}
-
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 28px;
-    cursor: pointer;
-    color: #aaa;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
 }
 
 /* Стили для кнопки "Главная" */
@@ -380,23 +201,6 @@ body {
     text-decoration: none;
     border-radius: 5px;
     z-index: 1000;
-}
-
-.home-button:hover {
-    background-color: darkgreen;
-}
-
-.modal-content .product-state {
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.product-state.good {
-    color: green;
-}
-
-.product-state.used {
-    color: black;
 }
 /* Стили для категорий */
 .category-bar {
@@ -423,7 +227,6 @@ body {
 }
 /* Основной стиль для категории */
 #category-select {
-    font-family: 'Arial', sans-serif;
     font-size: 16px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -439,22 +242,8 @@ body {
     cursor: pointer;
 }
 
-/* Стиль для стрелки выпадающего списка */
-#category-select::after {
-    content: '\25BC'; /* Стрелка вниз */
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-}
 
-/* Стиль для контейнера категории */
-.category-container {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-}
+
 
 /* Стиль для обёртки выпадающего списка */
 .category-wrapper {
@@ -463,32 +252,15 @@ body {
     max-width: 300px;
 }
 
-.category-wrapper::before {
-    content: '\25BC'; /* Стрелка вниз */
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: #333;
-}
+
 
 /* Дополнительные стили для улучшения внешнего вида */
-#category-select {
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease;
-}
 
 #category-select:focus {
-    border-color: #007bff;
+    border-color: #00ff2a;
     outline: none;
 }
 
-/* Стили для категорий */
-#category-select option {
-    padding: 10px;
-}
 
 /* Убедитесь, что категория выбор выглядит красиво на мобильных устройствах */
 @media (max-width: 768px) {
@@ -498,25 +270,7 @@ body {
     }
 }
 
-@media (max-width: 480px) {
-    #category-select {
-        font-size: 12px;
-        padding: 6px;
-    }
-}
 
-/* Стиль для модального окна */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-}
 
 .modal-content {
     background-color: #fefefe;
@@ -563,39 +317,6 @@ body {
     transition: transform 0.3s ease;
 }
 
-#fullscreen-image.zoomed {
-    transform: scale(1.5);
-}
-
-#prev-button,
-#next-button {
-    position: absolute;
-    top: 50%;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    user-select: none;
-}
-
-#prev-button {
-    left: 10px;
-}
-
-#next-button {
-    right: 10px;
-}
-
-/* Продукт карточка */
-.product-card {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 16px;
-    margin: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
 .product-card:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -640,29 +361,3 @@ body {
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
-
-.view-button:hover {
-    background-color: #0056b3;
-}
-
-/* Подсказки для поиска */
-.suggestions {
-    position: absolute;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-    max-height: 200px;
-    overflow-y: auto;
-    width: 100%;
-}
-
-.suggestion-item {
-    padding: 10px;
-    cursor: pointer;
-}
-
-.suggestion-item:hover {
-    background-color: #f0f0f0;
-}
-
